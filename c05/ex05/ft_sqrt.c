@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 21:21:39 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/17 21:21:39 by marvin           ###   ########.fr       */
+/*   Created: 2022/11/17 22:40:51 by marvin            #+#    #+#             */
+/*   Updated: 2022/11/17 22:40:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_iterative_power(int nb, int power)
+int ft_sqrt(int nb)
 {
-	int res;
+	int	n;
 
-	res = nb;
-	if (power < 0)
-		return (0);
-	else if (power == 0)
-		return (1);
-	while (power > 1)
+	n = 1;
+	if (nb > 0)
 	{
-		res *= nb;
-		power--;
+		while (n * n <= nb)
+		{
+			if (n * n == nb)
+				return (n);
+			else
+				n++;
+		}
 	}
-	return (res);
+	return (0);
 }
 
 /*int main(void)
 {
-	printf("%d", ft_iterative_power(5, 2));
+	printf("%d", ft_sqrt(-1));
 }*/
